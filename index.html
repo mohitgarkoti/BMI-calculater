@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: lightblue;
+            }
+
+            header {
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .card {
+                width: 50%;
+            }
+
+            .btn-style {
+                margin-left: 190px;
+            }
+
+            @media only screen and (max-width: 500px) {
+                .card {
+                    width: 100%;
+                }
+
+                .btn-style {
+                    margin-left: 92px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class=" card  m-auto" style='border: 1px white;border-radius: 20px;'>
+                <div class="card-header text-center">BMI Calculater</div>
+                <div class="card-body">
+                    <form class="form-group w-50 m-auto ">
+                        <label>weight</label>
+                        <input type="number" id="weight" required class="form-control">
+                        <label>Height</label>
+                        <input type="number" id="height" required class="form-control">
+                        <label>BMI Value</label>
+                        <input type="text" id="bmivalue" class="form-control">
+                    </form>
+                    <br>
+                    <div class="m-auto"><button class="btn btn-success btn-style"
+                            onclick="calculate()">Calculte</button>
+                    </div>
+                </div>
+                <div class="card-footer text-center">A Healthy BMI range between 19 and 25</div>
+            </div>
+
+            </div>
+        </header>
+        <script>
+            function calculate() {
+                var weight = document.getElementById("weight").value;
+                var height = document.getElementById("height").value;
+
+                height = height * 12;
+                height = height * 0.025;
+                var newvalue = weight / (height * height);
+                newvalue = Math.round(newvalue)
+                document.getElementById('bmivalue').value = newvalue;
+            }
+        </script>
+    </body>
+
+    </html>
+</body>
+
+</html>
